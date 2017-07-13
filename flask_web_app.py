@@ -12,7 +12,8 @@ def api_root():
 @app.route('/url')
 def api_url():
     orig_url = request.args.get('url', '')
-    return "Your new short URL is: " + url_creator.smallurl(orig_url)
+    sml=url_creator.make_smallurl()
+    return "Your new short URL is: " + sml(orig_url)
     #return "You said: " + request.args.get('url', '')
     #return 'Url requester' + url_for('api_url')
 
